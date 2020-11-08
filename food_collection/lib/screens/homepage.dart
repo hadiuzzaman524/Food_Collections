@@ -17,28 +17,31 @@ class _HomePageState extends State<HomePage> {
           title: const Text('Food Collections'),
           centerTitle: true,
         ),
-        body: GridView(
-          /*
-          => Here Sliver indicate Scrollable area
-          => GridDelegate focus on Structure on grid layout
-          => and WithCrossAxisExtent configure with maximum width of axis.
+        body: Container(
+          padding: EdgeInsets.all(10.0),
+          child: GridView(
+            /*
+            => Here Sliver indicate Scrollable area
+            => GridDelegate focus on Structure on grid layout
+            => and WithCrossAxisExtent configure with maximum width of axis.
 
-          finally total things is-> SliverGridDelegateWithMaxCrossAxisExtent
-           */
-          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 200,
-            crossAxisSpacing: 15,
-            mainAxisSpacing: 15,
-            childAspectRatio: 3 / 2,
+            finally total things is-> SliverGridDelegateWithMaxCrossAxisExtent
+             */
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 200,
+              crossAxisSpacing: 15,
+              mainAxisSpacing: 15,
+              childAspectRatio: 3 / 2,
+            ),
+            children: [
+              ...DUMMY_CATEGORIES.map((e) {
+                return CategoryItem(
+                  title: e.title,
+                  color: e.color,
+                );
+              }).toList(),
+            ],
           ),
-          children: [
-            ...DUMMY_CATEGORIES.map((e) {
-              return CategoryItem(
-                title: e.title,
-                color: e.color,
-              );
-            }).toList(),
-          ],
         ),
       ),
     );
