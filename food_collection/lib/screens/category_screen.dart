@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_collection/models/food_data.dart';
 import '../models/category_item.dart';
+import '../models/food_card_style.dart';
 
 class CategoryScreen extends StatelessWidget {
   static final routeName = 'CategoryScreen';
@@ -14,6 +15,7 @@ class CategoryScreen extends StatelessWidget {
     then ModalRoute.of(context).settings.arguments return those passing
     value in build function.
      */
+
     final title = argList['title'];
     final id = argList['id'];
     /*
@@ -24,13 +26,15 @@ class CategoryScreen extends StatelessWidget {
     }).toList();
 
     return Scaffold(
-        appBar: AppBar(
-          title: Text(title),
-        ),
-        body: ListView.builder(itemBuilder: (ctx,index){
-          return Text(newList[index].title);
-        },itemCount: newList.length,),
-
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: ListView.builder(
+        itemBuilder: (ctx, index) {
+          return FoodCard(title: title, url: newList[index].imageUrl);
+        },
+        itemCount: newList.length,
+      ),
     );
   }
 }
