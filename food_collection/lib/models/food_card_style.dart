@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'food_item.dart';
+import '../screens/details_screen.dart';
 
 class FoodCard extends StatelessWidget {
   final title;
@@ -7,13 +8,13 @@ class FoodCard extends StatelessWidget {
   final complexity;
   final affordability;
   final duration;
+  final id;
 
-  FoodCard(
-      {@required this.title,
-      @required this.url,
-      @required this.complexity,
-      @required this.affordability,
-      @required this.duration});
+  FoodCard({this.id,@required this.title,
+    @required this.url,
+    @required this.complexity,
+    @required this.affordability,
+    @required this.duration});
 
   String get getComplexity {
     if (complexity == Complexity.Simple) {
@@ -39,6 +40,9 @@ class FoodCard extends StatelessWidget {
     }
   }
 
+  nextPage(BuildContext ctx) {
+    Navigator.pushNamed(ctx, DetailsScreen.routeName, arguments: id);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +56,7 @@ class FoodCard extends StatelessWidget {
           ),
         ),
         child: InkWell(
-          onTap: () {},
+          onTap: () => nextPage(context),
           splashColor: Colors.cyan,
           child: Column(
             children: [

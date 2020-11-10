@@ -33,6 +33,7 @@ class CategoryScreen extends StatelessWidget {
         itemBuilder: (ctx, index) {
           final list = newList[index];
           return FoodCard(
+            id: list.id,
             title: list.title,
             url: list.imageUrl,
             complexity: list.complexity,
