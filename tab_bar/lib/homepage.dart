@@ -11,7 +11,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
           title: Text('TabBar'),
@@ -33,6 +33,14 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
+              Tab(
+                child: Row(
+                  children: [
+                    Icon(Icons.leaderboard),
+                    Text('Interesting'),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
@@ -40,6 +48,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             FirstPage(),
             SecondPage(),
+            FirstPage(),
           ],
         ),
       ),
