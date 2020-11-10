@@ -31,7 +31,14 @@ class CategoryScreen extends StatelessWidget {
       ),
       body: ListView.builder(
         itemBuilder: (ctx, index) {
-          return FoodCard(title: title, url: newList[index].imageUrl);
+          final list = newList[index];
+          return FoodCard(
+            title: list.title,
+            url: list.imageUrl,
+            complexity: list.complexity,
+            affordability: list.affordability,
+            duration: list.duration,
+          );
         },
         itemCount: newList.length,
       ),
