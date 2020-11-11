@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
     FirstPage(),
     SecondPage(),
   ];
-  int index;
+  int index=0;
 
   currentIndexx(indexx) {
     setState(() {
@@ -27,8 +27,8 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('MainPage'),
       ),
-      body: newList[index],
-      bottomNavigationBar: BottomNavigationBar(
+      body:newList[index],
+     bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.purple,
         selectedItemColor: Colors.yellow,
         unselectedItemColor: Colors.white,
