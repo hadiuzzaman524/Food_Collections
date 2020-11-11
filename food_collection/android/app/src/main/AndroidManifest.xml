@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="food_collection"
+        android:label="Self Cooking"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

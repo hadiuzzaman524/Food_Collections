@@ -22,7 +22,14 @@ class CategoryItem extends StatelessWidget {
       splashColor: Colors.redAccent,
       child: Container(
         padding: EdgeInsets.all(10),
-        child: Text(title),
+        child: Center(
+          child: Text(title,
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),),
+        ),
         decoration: BoxDecoration(
           color: color,
           gradient: LinearGradient(

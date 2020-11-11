@@ -17,7 +17,7 @@ class DrawerLayout extends StatelessWidget {
             color: Colors.orangeAccent,
             child: Center(
               child: Text(
-                'Cooking house',
+                'SELF COOKING',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,

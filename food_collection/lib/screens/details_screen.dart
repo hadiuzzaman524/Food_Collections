@@ -3,12 +3,17 @@ import '../models/food_data.dart';
 
 class DetailsScreen extends StatefulWidget {
   static const routeName = 'DetailsScreen';
+  Function getFavorite;
+
+  DetailsScreen({@required this.getFavorite});
 
   @override
   _DetailsScreenState createState() => _DetailsScreenState();
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
+  bool isFavorite = false;
+
   @override
   Widget build(BuildContext context) {
     final id = ModalRoute.of(context).settings.arguments as String;
@@ -147,6 +152,17 @@ class _DetailsScreenState extends State<DetailsScreen> {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: isFavorite ? Icon(Icons.star) : Icon(Icons.star_border),
+        onPressed: () {
+          setState(() {
+            isFavorite = !isFavorite;
+          });
+          if(isFavorite){
+            widget.getFavorite(newList.id);
+          }
+        },
       ),
     );
   }
