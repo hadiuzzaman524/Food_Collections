@@ -37,13 +37,16 @@ class _DetailsScreenState extends State<DetailsScreen> {
               color: Colors.black.withOpacity(0.5),
               width: MediaQuery.of(context).size.width,
               height: 50,
-              child: Text(
-                newList.title,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 5),
+                child: Text(
+                  newList.title,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
